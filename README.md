@@ -1,21 +1,21 @@
-PAC-man
+PAC in Black
 ===============
 
 Getting started
 ---------------
 First you must initialize a repository with our sources:
 
-    repo init -u git://github.com/PAC-man/android.git -b cm-10.1
+    repo init -u git://github.com/PACinBlack/android.git -b cm-10.1
 
 Then sync it up (This will take a while, so get a cup of coffee and some snickers):
 
     repo sync
 
 
-Building P.A.C
+Building PAC in Black
 ------------------------
 
-For building P.A.C you must cd to the working directory.
+For building PAC in Black you must cd to the working directory.
 Make sure you have your device tree sources, located on
 
     cd device/-manufacturer-/-device-

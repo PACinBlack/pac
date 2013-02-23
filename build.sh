@@ -45,7 +45,7 @@ res1=$(date +%s.%N)
 echo -e '\0033\0143'
 clear
 
-echo -e "${cya}Building ${bldgrn}P ${bldppl}A ${bldblu}C ${bldylw}v$VERSION ${txtrst}";
+echo -e "${cya}Building ${cya}PACinBlack ${bldgrn}P ${bldppl}A ${bldblu}C ${bldylw}v$VERSION ${txtrst}";
 
 # PAC device dependencies
 echo -e ""
@@ -104,4 +104,4 @@ rm -f out/target/product/*/pac_*-ota-eng.*.zip
 
 # finished? get elapsed time
 res2=$(date +%s.%N)
-echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
+echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60") minutes ($(echo "$res2 - $res1") seconds) ${txtrst}"
