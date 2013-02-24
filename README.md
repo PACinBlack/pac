@@ -22,14 +22,14 @@ Make sure you have your device tree sources, located on
 
 Now you can run our build script:
 
-    ./build-pac.sh -device-
+    ./build-pib.sh -device-
 
 example:
-    ./build-pac.sh urushi
+    ./build-pib.sh urushi
 
 You can also use a second parameter for syncing sources before building
 
-    ./build-pac.sh -device- true
+    ./build-pib.sh -device- true
 
 
 There are also a few parameters that you can use together with before mentioned:
@@ -39,7 +39,7 @@ There are also a few parameters that you can use together with before mentioned:
 
 The usage is the same
     
-    ./build-pac.sh -device- -parameters- true
+    ./build-pib.sh -device- -parameters- true
 
 
 Parameters will be considered false unless you set them to true
