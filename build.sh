@@ -18,9 +18,10 @@ bldppl=${txtbld}$(tput setaf 5) #  purple
 bldcya=${txtbld}$(tput setaf 6) #  cyan
 txtrst=$(tput sgr0)             # Reset
 
-THREADS="16"
+THREADS="17"
 DEVICE="$1"
 EXTRAS="$2"
+MAKE="make -j${THREADS}"
 
 # get current version
 MAJOR=$(cat $DIR/vendor/pac/config/pac_common.mk | grep 'PAC_VERSION_MAJOR = *' | sed  's/PAC_VERSION_MAJOR = //g')
@@ -62,7 +63,8 @@ case "$EXTRAS" in
    clean)
        echo -e ""
        echo -e "${bldblu}Cleaning intermediates and output files ${txtrst}"
-       make clean > /dev/null;;
+       $MAKE installclean
+       $MAKE clobber
 esac
 
 # download prebuilt files
@@ -97,11 +99,11 @@ echo -e ""
 echo -e "${bldblu}Starting compilation ${txtrst}"
 
 # start compilation
-mka bacon
+$MAKE bacon
 echo -e ""
 
 rm -f out/target/product/*/pac_*-ota-eng.*.zip
 
 # finished? get elapsed time
 res2=$(date +%s.%N)
-echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60") minutes ($(echo "$res2 - $res1") seconds) ${txtrst}"
+echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
